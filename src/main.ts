@@ -3,9 +3,16 @@ import { ADNLClient } from 'adnl'
 import { Command } from 'commander'
 
 import { ipIntegerToString, loadLiteServersConfig } from './utils'
-import { handleAnyError, handleBlockHeader, handleCurrentTime, handleMasterchainInfo, handleUnknownRespCode } from './handlers'
 import { ADNLUtil, ADNLDecoder } from './uadnl'
 import { Logger } from './logger'
+import {
+    handleAnyError,
+    handleBlockHeader,
+    handleCurrentTime,
+    handleMasterchainInfo,
+    handleUnknownRespCode,
+    handleBlockData
+} from './handlers'
 
 const adnlUtil = new ADNLUtil()
 
@@ -28,8 +35,8 @@ function main () {
     Logger.info(`random server: ${stringIP}:${host.port} "${host.id.key}"`)
 
     const adnlClient = new ADNLClient(stringIP, host.port, host.id.key)
-        .on('connect', () => Logger.ok('connection successful'))
-        .on('close', () => Logger.info('connection closed'))
+        .on('connect', () => Logger.ok('connection successful\n'))
+        .on('close', () => Logger.info('connection closed\n'))
         .on('error', (error: Error) => Logger.error(`connection error: ${error}`))
         .on('ready', () => {
             adnlUtil.timePing()
@@ -46,19 +53,23 @@ function main () {
 
             switch (respCode) {
                 case ADNLDecoder.RESP_CODE.currentTime:
-                    handleCurrentTime(adnlUtil, answer.answer)
+                    handleCurrentTime(adnlUtil, answer)
                     break
 
                 case ADNLDecoder.RESP_CODE.anyError:
-                    handleAnyError(answer.answer)
+                    handleAnyError(answer)
                     break
 
                 case ADNLDecoder.RESP_CODE.masterchainInfo:
-                    handleMasterchainInfo(adnlUtil, answer.answer)
+                    handleMasterchainInfo(adnlUtil, answer)
                     break
 
                 case ADNLDecoder.RESP_CODE.blockHeader:
-                    handleBlockHeader(adnlUtil, answer.answer)
+                    handleBlockHeader(adnlUtil, answer)
+                    break
+
+                case ADNLDecoder.RESP_CODE.blockData:
+                    handleBlockData(answer)
                     break
 
                 default:
@@ -71,4 +82,4 @@ function main () {
     adnlUtil.setClient(adnlClient)
 }
 
-if (require.main === module) { main(); console.log() }
+if (require.main === module) { main() }
