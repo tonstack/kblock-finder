@@ -1,35 +1,43 @@
 {
-  "name": "kblock-finder",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tonstack/kblock-finder.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tonstack/kblock-finder/issues"
-  },
-  "homepage": "https://github.com/tonstack/kblock-finder#readme",
-  "devDependencies": {
-    "@istanbuljs/nyc-config-typescript": "^1.0.2",
-    "eslint": "^8.10.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^16.1.0",
-    "eslint-import-resolver-typescript": "^2.5.0",
-    "eslint-plugin-import": "^2.25.4",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.6.2"
-  },
-  "dependencies": {
-    "adnl": "^0.0.3",
-    "commander": "^9.3.0",
-    "ton-tl": "^0.2.2",
-    "ton3": "^0.0.11"
-  }
+    "name": "kblock-finder",
+    "version": "1.0.0",
+    "description": "helps to get the last key block in the TON Blockchain",
+    "main": "./dist/index.js",
+    "bin": {
+        "kblock-finder": "./dist/main.js"
+    },
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json"
+    },
+    "author": "TonStack",
+    "license": "GPL-3.0-only",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tonstack/kblock-finder.git"
+    },
+    "homepage": "https://github.com/tonstack/kblock-finder#readme",
+    "keywords": [
+        "ton",
+        "keyblock",
+        "blockchain"
+    ],
+    "bugs": {
+        "url": "https://github.com/tonstack/kblock-finder/issues"
+    },
+    "devDependencies": {
+        "@istanbuljs/nyc-config-typescript": "^1.0.2",
+        "eslint": "^8.10.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-airbnb-typescript": "^16.1.0",
+        "eslint-import-resolver-typescript": "^2.5.0",
+        "eslint-plugin-import": "^2.25.4",
+        "ts-node": "^10.7.0",
+        "typescript": "^4.6.2"
+    },
+    "dependencies": {
+        "adnl": "^0.0.3",
+        "commander": "^9.3.0",
+        "ton-tl": "^0.2.2",
+        "ton3": "^0.0.11"
+    }
 }
