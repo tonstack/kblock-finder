@@ -2,8 +2,8 @@
 # /src
 
 # Typescript
-tsconfig*.json
-dist/tsconfig.build.tsbuildinfo
+# tsconfig*.json
+# dist/tsconfig.build.tsbuildinfo
 
 # Docs
 /docs
