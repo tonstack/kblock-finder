@@ -1,7 +1,7 @@
 {
     "name": "kblock-finder",
     "version": "1.0.0",
-    "description": "helps to get the last key block in the TON Blockchain",
+    "description": "cli tool helps to get the last key block in the TON Blockchain",
     "main": "./dist/index.js",
     "bin": {
         "kblock-finder": "./dist/main.js"
