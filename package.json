@@ -1,13 +1,14 @@
 {
     "name": "@tonstack/kblock-finder",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "cli tool helps to get the last key block in the TON Blockchain",
     "main": "./dist/index.js",
     "bin": {
         "kblock-finder": "./dist/main.js"
     },
     "scripts": {
-        "build": "tsc -p tsconfig.build.json"
+        "build": "tsc -p tsconfig.build.json",
+        "pre-pub": "echo '#!/usr/bin/env node' | cat - dist/main.js > ./dist/temp && mv ./dist/temp dist/main.js"
     },
     "author": "TonStack",
     "license": "GPL-3.0-only",

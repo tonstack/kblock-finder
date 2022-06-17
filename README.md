@@ -4,7 +4,7 @@ cli tool helps to get the last key block in the TON Blockchain
 
 1. install
 ```
-npm install -g kblock-finder
+npm i -g @tonstack/kblock-finder
 ```
 
 2. show help message
