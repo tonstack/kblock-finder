@@ -1,4 +1,4 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env ts-node-script
 
 import path from 'path'
 import { ADNLClient } from 'adnl'
