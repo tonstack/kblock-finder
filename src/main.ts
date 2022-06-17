@@ -1,4 +1,24 @@
-#!/usr/bin/env ts-node-script
+/*
+    kblock-finder – cli tool helps to get the last
+                    key block in the TON Blockchain
+
+    Copyright (C) 2022 TonStack
+
+    This file is part of kblock-finder.
+
+    kblock-finder is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    kblock-finder is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with kblock-finder.  If not, see <https://www.gnu.org/licenses/>.
+*/
 
 import path from 'path'
 import { ADNLClient } from 'adnl'
