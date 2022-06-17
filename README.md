@@ -1,6 +1,6 @@
 # kblock-finder
 
-helps to get the last key block in the TON Blockchain
+cli tool helps to get the last key block in the TON Blockchain
 
 1. install
 ```
