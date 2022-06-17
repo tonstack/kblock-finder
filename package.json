@@ -1,5 +1,5 @@
 {
-    "name": "kblock-finder",
+    "name": "@tonstack/kblock-finder",
     "version": "1.0.0",
     "description": "cli tool helps to get the last key block in the TON Blockchain",
     "main": "./dist/index.js",
