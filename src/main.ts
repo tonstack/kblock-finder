@@ -1,3 +1,5 @@
+#!/usr/bin/env ts-node
+
 import path from 'path'
 import { ADNLClient } from 'adnl'
 import { Command } from 'commander'

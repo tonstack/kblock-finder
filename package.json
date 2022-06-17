@@ -4,7 +4,7 @@
     "description": "helps to get the last key block in the TON Blockchain",
     "main": "./dist/index.js",
     "bin": {
-        "kblock-finder": "./dist/main.js"
+        "kblock-finder": "./src/main.ts"
     },
     "scripts": {
         "build": "tsc -p tsconfig.build.json"
